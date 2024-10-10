@@ -5,9 +5,11 @@
 (function() {
     // Paramètres personnalisables par défaut
     var options = {
-        animation: 'fade-in',   // Options : 'fade-in', 'slide-in'
-        shape: 'round',         // Options : 'round', 'square'
-        pulse: true             // Options : true, false
+        afficherWidget: true,      // Options : true, false
+        animation: 'fade-in',      // Options : 'fade-in', 'slide-in'
+        shape: 'round',            // Options : 'round', 'square'
+        pulse: true,               // Options : true, false
+        customStyles: {}           // Styles CSS personnalisés
     };
 
     // Fonction pour permettre aux utilisateurs de définir leurs propres options
@@ -23,16 +25,15 @@
         }
     };
 
-    // Vérifier si le widget doit être affiché sur cette page
-    var afficherWidget = true; // Définir à 'false' pour désactiver le widget sur certaines pages
-
-    if (!afficherWidget) {
-        return; // Sortir si le widget ne doit pas être affiché
-    }
-
+    // Attendre que le DOM soit chargé
     document.addEventListener('DOMContentLoaded', function() {
+        // Vérifier si le widget doit être affiché sur cette page
+        if (!options.afficherWidget) {
+            return; // Sortir si le widget ne doit pas être affiché
+        }
+
         var noeudRose = document.createElement('img');
-        noeudRose.src = 'https://cdn.jsdelivr.net/gh/caouic/octobre-rose-widget@latest/images/noeud_rose.png';
+        noeudRose.src = 'https://cdn.jsdelivr.net/gh/caouic/octobre-rose-widget@v1.1/images/noeud_rose.png';
         noeudRose.alt = 'Octobre Rose';
 
         // Styles de base
@@ -50,6 +51,15 @@
             noeudRose.style.borderRadius = '50%';
         }
 
+        // Appliquer les styles personnalisés si fournis
+        if (options.customStyles && typeof options.customStyles === 'object') {
+            for (var style in options.customStyles) {
+                if (options.customStyles.hasOwnProperty(style)) {
+                    noeudRose.style[style] = options.customStyles[style];
+                }
+            }
+        }
+
         // Préparation pour l'animation
         noeudRose.style.opacity = '0';
         noeudRose.style.transition = 'all 0.5s ease-in-out';
@@ -61,15 +71,15 @@
         // Ajouter l'effet de pulsation si activé
         if (options.pulse) {
             // Définir les keyframes pour l'animation de pulsation
-            var style = document.createElement('style');
-            style.type = 'text/css';
+            var styleElement = document.createElement('style');
+            styleElement.type = 'text/css';
             var keyFrames = '@keyframes pulse {' +
                 '0% { transform: scale(1); }' +
                 '50% { transform: scale(1.1); }' +
                 '100% { transform: scale(1); }' +
             '}';
-            style.appendChild(document.createTextNode(keyFrames));
-            document.head.appendChild(style);
+            styleElement.appendChild(document.createTextNode(keyFrames));
+            document.head.appendChild(styleElement);
 
             // Appliquer l'animation de pulsation
             noeudRose.style.animation = 'pulse 1.5s infinite';
