@@ -98,7 +98,7 @@
 
         // Ajouter un gestionnaire d'événement pour le clic
         noeudRose.addEventListener('click', function() {
-            window.open('https://www.cancerdusein.org/', '_blank');
+            window.open('https://www.cancerdusein.org/', '_blank', 'noopener,noreferrer');
         });
     });
 })();
