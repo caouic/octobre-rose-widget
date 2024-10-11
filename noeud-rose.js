@@ -33,7 +33,7 @@
         }
 
         var noeudRose = document.createElement('img');
-        noeudRose.src = 'https://cdn.jsdelivr.net/gh/caouic/octobre-rose-widget@v1.1/images/noeud_rose.png';
+        noeudRose.src = 'https://cdn.jsdelivr.net/gh/caouic/octobre-rose-widget@v1.3/images/noeud_rose.min.png';
         noeudRose.alt = 'Octobre Rose';
 
         // Styles de base
