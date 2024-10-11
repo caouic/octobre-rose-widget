@@ -1,6 +1,6 @@
 # Widget Octobre Rose
 
-![Octobre Rose](https://cdn.jsdelivr.net/gh/caouic/octobre-rose-widget@v1.3/images/noeud_rose.png)
+![Octobre Rose](https://cdn.jsdelivr.net/gh/caouic/octobre-rose-widget@v1.4/images/noeud_rose.png)
 
 ## Description
 
@@ -30,7 +30,7 @@ Vous pouvez ajouter le widget Octobre Rose à votre site en le chargeant directe
 1. **Inclure le script du widget** dans votre code HTML, de préférence juste avant la balise de fermeture `</body>` ou dans le `<head>` si vous préférez :
 
    ```html
-   <script src="https://cdn.jsdelivr.net/gh/caouic/octobre-rose-widget@v1.3/noeud-rose.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/caouic/octobre-rose-widget@v1.4/noeud-rose.js"></script>
    ```
 
 2. **Personnaliser les options (facultatif)** en ajoutant le script suivant **après** l'inclusion du script du widget :
@@ -57,7 +57,7 @@ Vous pouvez ajouter le widget Octobre Rose à votre site en le chargeant directe
 
   ```html
   <!-- Inclusion du widget Octobre Rose sur une page spécifique -->
-  <script src="https://cdn.jsdelivr.net/gh/caouic/octobre-rose-widget@v1.3/noeud-rose.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/caouic/octobre-rose-widget@v1.4/noeud-rose.js"></script>
   ```
 
 - **Personnalisez les options (facultatif)** comme indiqué précédemment.
@@ -67,7 +67,7 @@ Vous pouvez ajouter le widget Octobre Rose à votre site en le chargeant directe
 - **Inclure le script du widget** sur toutes les pages de votre site :
 
   ```html
-  <script src="https://cdn.jsdelivr.net/gh/caouic/octobre-rose-widget@v1.3/noeud-rose.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/caouic/octobre-rose-widget@v1.4/noeud-rose.js"></script>
   ```
 
 - **Ajouter le script de personnalisation** pour contrôler l'affichage du widget en fonction de la page :
